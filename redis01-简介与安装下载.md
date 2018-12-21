@@ -32,7 +32,7 @@ redis和memcached相比,的独特之处:
 - 分布式队列系统；
 - 缓存系统
 
-# 安装 redis
+# 安装 Redis
 1. 官方站点: redis.io 下载最新版或者最新stable版
 2. 解压源码并进入目录
 3. 不用configure
