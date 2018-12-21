@@ -111,9 +111,10 @@ redis 127.0.0.1:6379> getbit char 7
 ```bash
 setbit  key offset value
 ```
-注意: <a href="https://redis.io/commands/setbit">https://redis.io/commands/setbit</a>
+注意: https://redis.io/commands/setbit
 - 如果offset过大,则会在中间填充0,
-- offset最大大到多少,2^32-1也就是说offset最大能去到4294967296-1去。有四十二亿。https://blog.csdn.net/iaiti/article/details/53446667
+- offset最大大到多少,2^32-1也就是说offset最大能去到4294967296-1去。有四十二亿。应用举例：
+https://blog.csdn.net/iaiti/article/details/53446667
 - offset最大2^32-1,可推出最大的的字符串为512M
 
 3. 多个key按二进制进行运算（比如，用于大小写的转换）
