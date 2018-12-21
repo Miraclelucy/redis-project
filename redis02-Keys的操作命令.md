@@ -57,3 +57,7 @@ set ztan sss
 ```bash
 select 1
 ```
+12 将某个key移动到1号database
+```bash
+move ztan 1
+```
