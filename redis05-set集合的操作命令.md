@@ -25,7 +25,7 @@ srandmember key
 sismember key  value
 ```
 
-6. 返回集中中所有的元素
+6. 返回集合中所有的元素
 ```bash
 smembers key
 ```
