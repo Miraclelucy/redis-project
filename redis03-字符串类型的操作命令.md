@@ -1,9 +1,9 @@
 # String类型的key高阶操作
 1. 设置单个key的同时，设置过期秒数和毫秒数。注意ex和px不要同时写，如果同时写以后面的有效期为准
 
-**set key value [ex 秒数]/[px 毫秒数]  [nx] /[xx]**
+  **set key value [ex 秒数]/[px 毫秒数]  [nx] /[xx]**
 
-说明：nx表示不存在时,执行操作；xx表示key存在时,执行操作
+  说明：nx表示不存在时,执行操作；xx表示key存在时,执行操作
 
 2. 设置多个key
 
