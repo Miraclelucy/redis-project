@@ -11,7 +11,7 @@ redis和memcached相比,的独特之处:
 
 # Redis基本特点
 1. 速度快:Redis使用C编写，能支持10万每秒的读写频率。
-2. 数据结构丰富:可以将Redis看做“数据结构服务器”。目前，Redis支持5种数据结构。(string,list，set，sorted set，hash table)
+2. 数据结构丰富:可以将Redis看做“数据结构服务器”。目前Redis支持5种数据结构string,list，set，sorted set，hash table
 3. 持久化:支持数据持久化存储。
 4. 主-从复制:Redis支持简单而快速的主-从复制。
 5. 丰富的特性:支持publish/subscribe, key过期等特性
