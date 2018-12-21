@@ -16,7 +16,7 @@ mget key1 key2 ..keyn
 ```bash
 setrange key offset value
 ```
-exp:
+> exp:
   redis 127.0.0.1:6379> set greet hello
   OK
   redis 127.0.0.1:6379> setrange greet 2 x
@@ -28,7 +28,7 @@ exp:
 ```bash
 getrange key start stop
 ```
-exp:
+> exp:
   redis 127.0.0.1:6379> set title 'chinese'
   OK
   redis 127.0.0.1:6379> getrange title 0 3
@@ -40,7 +40,7 @@ exp:
 ```bash
 getset key newvalue
 ```
-exp:
+> exp:
   127.0.0.1:6379> set ztan ttt
   OK
   127.0.0.1:6379> get ztan
@@ -50,4 +50,4 @@ exp:
   127.0.0.1:6379> get ztan
   "sss"
   
-  7. 
+7. 
