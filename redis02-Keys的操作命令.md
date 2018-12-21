@@ -78,7 +78,7 @@ expire ztan 10
 pexpire key 毫秒数, 设置生命周期
 pttl  key, 以毫秒返回生命周期
 ```
-4.将key设置为永久有效
+4. 将key设置为永久有效
 ```bash
 persist ztan
 ```
