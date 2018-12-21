@@ -90,4 +90,48 @@ redis 127.0.0.1:6379> decrby age 3
 (integer) 16
 ```
 
-9. 
+9. 获取二进制位上的值,对应位上的值(从左,从0编号，A对应的ascii码是65，表示为二进制即是0100 0001)
+```bash
+getbit key offset
+```
+exp:
+```bash
+redis 127.0.0.1:6379> set char A
+OK
+redis 127.0.0.1:6379> getbit char 1
+(integer) 1
+redis 127.0.0.1:6379> getbit char 2
+(integer) 0
+redis 127.0.0.1:6379> getbit char 7
+(integer) 1
+```
+
+10. 设置二进制位上的值,返回: 该位上的旧值
+```bash
+setbit  key offset value
+```
+注意: 
+- 如果offset过大,则会在中间填充0,
+- offset最大大到多少
+- offset最大2^32-1,可推出最大的的字符串为512M
+
+11. 多个key按二进制进行运算（比如，用于大小写的转换）
+```bash
+bitop operation destkey key1 [key2 ...]
+```
+对key1,key2..keyN作operation,并将结果保存到 destkey 上。
+operation 可以是 AND 、 OR 、 NOT 、 XOR
+```bash
+redis 127.0.0.1:6379> setbit lower 2 1
+(integer) 0
+redis 127.0.0.1:6379> get lower
+" "
+redis 127.0.0.1:6379> set char Q
+OK
+redis 127.0.0.1:6379> get char
+"Q"
+redis 127.0.0.1:6379> bitop or char char lower
+(integer) 1
+redis 127.0.0.1:6379> get char
+"q"
+```
