@@ -31,3 +31,26 @@ redis和memcached相比,的独特之处:
 - 发布订阅系统；
 - 分布式队列系统；
 - 缓存系统
+
+# 安装 redis
+1. 官方站点: redis.io 下载最新版或者最新stable版
+2. 解压源码并进入目录
+3. 不用configure
+4: 直接make -j 4 （说明： “-j 4”表示同时启动四个并发线程编译源代码，你可以改为其他线程数，默认为1）
+5. sudo make install 
+（也可以通过指定添加参数指定安装目录 make PREFIX=/usr/local/redis  install）
+6. 安装完后，在安装目录的src目录下可以看到以下几个工具
+> redis-benchmark  性能测试工具
+> redis-check-aof  日志文件检测工(比如断电造成日志损坏,可以检测并修复)
+> redis-check-dump  快照文件检测工具,效果类上
+> redis-cli  客户端
+> redis-server 服务端
+7. 启动redis
+在redis安装目录下，使用以下命令启动redis (注意最后有一个“&”符号，表示后台执行)
+src/redis-server ./redis.conf &
+8. 验证 redis 是否启动成功
+ ps -ef | grep redis
+9. 使用src/redis-cli 访问 redis
+
+
+
