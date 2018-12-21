@@ -30,33 +30,33 @@ sismember key  value
 smembers key
 ```
 
-7.返回集合个数
+7. 返回集合个数
 ```bash
 scard key
 ```
 
-8.把source中的value删除,并添加到dest集合中
+8. 把source中的value删除,并添加到dest集合中
 ```bash
 smove source dest value
 ```
 
-9.求交集
+9. 求交集
 ```bash
 sinter  key1 key2 key3
 ```
 
-10.求交集并存储
+10. 求交集并存储
 ```bash
 sinterstore dest key1 key2 key3
 ```
 求出key1 key2 key3 三个集合中的交集,并赋给dest
 
-11.求并集
+11. 求并集
 ```bash
 suion key1 key2.. Keyn
 ```
 
-12.求差集
+12. 求差集
 ```bash
 sdiff key1 key2 key3 
 ```
