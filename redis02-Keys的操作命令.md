@@ -64,9 +64,22 @@ move ztan 1
 ```
 
 # 有效期设置
-1. 作用: 查询key的生命周期
+1. 查询key的生命周期
 返回: 秒数
 ```bash
 ttl ztan
 ```
-
+对于不存在的key,返回-2；永久有效的key,都返回-1；
+2. 设置key的生命周期,如下，将生命周期设为10秒
+```bash
+expire ztan 10
+```
+3. 同理: 
+```bash
+pexpire key 毫秒数, 设置生命周期
+pttl  key, 以毫秒返回生命周期
+```
+4.将key设置为永久有效
+```bash
+persist ztan
+```
