@@ -16,7 +16,7 @@ mget key1 key2 ..keyn
 ```bash
 setrange key offset value
 ```
-> exp:
+exp:
 > redis 127.0.0.1:6379> set greet hello
 > OK
 > redis 127.0.0.1:6379> setrange greet 2 x
