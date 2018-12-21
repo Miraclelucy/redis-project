@@ -1,21 +1,21 @@
 # String类型的key高阶操作
 1. 设置单个key的同时，设置过期秒数和毫秒数。注意ex和px不要同时写，如果同时写以后面的有效期为准
-```bash
-set key value [ex 秒数]/[px 毫秒数]  [nx] /[xx]
-```
+
+**set key value [ex 秒数]/[px 毫秒数]  [nx] /[xx]**
+
 说明：nx表示不存在时,执行操作；xx表示key存在时,执行操作
 
 2. 设置多个key
-```bash
-mset key1 v1 key2 v2 
-```
+
+**mset key1 v1 key2 v2 **
+
 3. 获取多个key
-```bash
-mget key1 key2 ..keyn
-```
+
+**mget key1 key2 ..keyn**
+
 4. 设置value值的某一部分
-```bash
 **setrange key offset value**
+```bash
   redis 127.0.0.1:6379> set greet hello
   OK
   redis 127.0.0.1:6379> setrange greet 2 x
@@ -24,10 +24,7 @@ mget key1 key2 ..keyn
   "hexlo"
 ```
 5. 获取value值的某一部分 使用[start, stop]范围的值（对于字符串的下标,左数从0开始,右数从-1开始）
-```bash
-getrange key start stop
-```
-exp:
+**getrange key start stop**
 ```bash
   redis 127.0.0.1:6379> set title 'chinese'
   OK
@@ -38,10 +35,7 @@ exp:
 ```
 
 6. 获取并返回旧值,设置新值
-```bash
-getset key newvalue
-```
-exp:
+**getset key newvalue**
 ```bash
   127.0.0.1:6379> set ztan ttt
   OK
@@ -54,14 +48,13 @@ exp:
 ``` 
 
 7. 加法
-
-incr key
+**incr key**
 作用: 指定的key的值加1,并返回加1后的值.
 注意:
 - 不存在的key当成0,再incr操作
 - 范围为64有符号 
+**incrby key number**
 ```bash
-incrby key number
 redis 127.0.0.1:6379> incrby age  90
 (integer) 92
 
