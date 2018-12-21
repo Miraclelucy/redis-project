@@ -1,3 +1,4 @@
+# 基本操作
 1. 查询所有的keys
 
 ```bash
@@ -57,7 +58,15 @@ set ztan sss
 ```bash
 select 1
 ```
-12 将某个key移动到1号database
+12. 将某个key移动到1号database
 ```bash
 move ztan 1
 ```
+
+# 有效期设置
+1. 作用: 查询key的生命周期
+返回: 秒数
+```bash
+ttl ztan
+```
+
