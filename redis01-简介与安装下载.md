@@ -36,16 +36,14 @@ redis和memcached相比,的独特之处:
 1. 官方站点: redis.io 下载最新版或者最新stable版
 2. 解压源码并进入目录
 3. 不用configure
-4. 执行make
+4. 执行make(说明： “-j 4”表示同时启动四个并发线程编译源代码，你可以改为其他线程数，默认为1)
 ```bash 
 make -j 4  
 ```
-（说明： “-j 4”表示同时启动四个并发线程编译源代码，你可以改为其他线程数，默认为1）
-5. 执行make install
+5. 执行make install(说明：也可以通过指定添加参数指定安装目录 make PREFIX=/usr/local/redis  install)
 ```bash  
 sudo make install 
 ```
-（也可以通过指定添加参数指定安装目录 make PREFIX=/usr/local/redis  install）
 6. 安装完后，在安装目录的src目录下可以看到以下几个工具
 - redis-benchmark  性能测试工具
 - redis-check-aof  日志文件检测工(比如断电造成日志损坏,可以检测并修复)
