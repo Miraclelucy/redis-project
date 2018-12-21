@@ -4,6 +4,7 @@
 set key value [ex 秒数]/[px 毫秒数]  [nx] /[xx]
 ```
 说明：nx表示不存在时,执行操作；xx表示key存在时,执行操作
+
 2. 设置多个key
 ```bash
 mset key1 v1 key2 v2 
@@ -56,6 +57,7 @@ exp:
 ``` 
 
 7. 加法
+
 incr key
 作用: 指定的key的值加1,并返回加1后的值.
 注意:
