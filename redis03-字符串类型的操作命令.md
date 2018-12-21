@@ -1,4 +1,4 @@
-# String类型的key高阶操作
+# 基础操作
 1. 设置单个key的同时，设置过期秒数和毫秒数。注意ex和px不要同时写，如果同时写以后面的有效期为准
 ```bash
  set key value [ex 秒数]/[px 毫秒数]  [nx] /[xx]
@@ -90,7 +90,8 @@ redis 127.0.0.1:6379> decrby age 3
 (integer) 16
 ```
 
-9. 获取二进制位上的值,对应位上的值(从左,从0编号，A对应的ascii码是65，表示为二进制即是0100 0001)
+# 位操作
+1. 获取二进制位上的值,对应位上的值(从左,从0编号，A对应的ascii码是65，表示为二进制即是0100 0001)
 ```bash
 getbit key offset
 ```
@@ -106,7 +107,7 @@ redis 127.0.0.1:6379> getbit char 7
 (integer) 1
 ```
 
-10. 设置二进制位上的值,返回: 该位上的旧值
+2. 设置二进制位上的值,返回: 该位上的旧值
 ```bash
 setbit  key offset value
 ```
@@ -115,7 +116,7 @@ setbit  key offset value
 - offset最大大到多少
 - offset最大2^32-1,可推出最大的的字符串为512M
 
-11. 多个key按二进制进行运算（比如，用于大小写的转换）
+3. 多个key按二进制进行运算（比如，用于大小写的转换）
 ```bash
 bitop operation destkey key1 [key2 ...]
 ```
