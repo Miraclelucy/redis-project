@@ -15,10 +15,7 @@ mget key1 key2 ..keyn
 ```
 4. 设置value值的某一部分
 ```bash
-setrange key offset value
-```
-exp:
-```bash
+**setrange key offset value**
   redis 127.0.0.1:6379> set greet hello
   OK
   redis 127.0.0.1:6379> setrange greet 2 x
