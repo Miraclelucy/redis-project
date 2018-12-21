@@ -54,4 +54,33 @@ exp:
   127.0.0.1:6379> get ztan
   "sss"
 ``` 
-7. 
+
+7. 加法
+incr key
+作用: 指定的key的值加1,并返回加1后的值.
+注意:
+- 不存在的key当成0,再incr操作
+- 范围为64有符号 
+```bash
+incrby key number
+redis 127.0.0.1:6379> incrby age  90
+(integer) 92
+
+incrbyfloat key floatnumber
+redis 127.0.0.1:6379> incrbyfloat age 3.5
+"95.5"
+```
+8. 减法
+```bash
+decr key
+redis 127.0.0.1:6379> set age 20
+OK
+redis 127.0.0.1:6379> decr age
+(integer) 19
+
+decrby key number
+redis 127.0.0.1:6379> decrby age 3
+(integer) 16
+```
+
+9. 
