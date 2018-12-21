@@ -17,13 +17,14 @@ mget key1 key2 ..keyn
 setrange key offset value
 ```
 exp:
-> redis 127.0.0.1:6379> set greet hello
-> OK
-> redis 127.0.0.1:6379> setrange greet 2 x
-> (integer) 5
-> redis 127.0.0.1:6379> get greet
-> "hexlo"
-
+```bash
+  redis 127.0.0.1:6379> set greet hello
+  OK
+  redis 127.0.0.1:6379> setrange greet 2 x
+  (integer) 5
+  redis 127.0.0.1:6379> get greet
+  "hexlo"
+```
 5. 获取value值的某一部分 使用[start, stop]范围的值（对于字符串的下标,左数从0开始,右数从-1开始）
 ```bash
 getrange key start stop
