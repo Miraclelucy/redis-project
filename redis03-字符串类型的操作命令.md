@@ -7,13 +7,14 @@
 
 2. 设置多个key
 
-**mset key1 v1 key2 v2 **
+**mset key1 v1 key2 v2**
 
 3. 获取多个key
 
 **mget key1 key2 ..keyn**
 
 4. 设置value值的某一部分
+
 **setrange key offset value**
 ```bash
   redis 127.0.0.1:6379> set greet hello
@@ -24,6 +25,7 @@
   "hexlo"
 ```
 5. 获取value值的某一部分 使用[start, stop]范围的值（对于字符串的下标,左数从0开始,右数从-1开始）
+
 **getrange key start stop**
 ```bash
   redis 127.0.0.1:6379> set title 'chinese'
@@ -35,6 +37,7 @@
 ```
 
 6. 获取并返回旧值,设置新值
+
 **getset key newvalue**
 ```bash
   127.0.0.1:6379> set ztan ttt
@@ -48,11 +51,13 @@
 ``` 
 
 7. 加法
+
 **incr key**
 作用: 指定的key的值加1,并返回加1后的值.
 注意:
 - 不存在的key当成0,再incr操作
 - 范围为64有符号 
+
 **incrby key number**
 ```bash
 redis 127.0.0.1:6379> incrby age  90
@@ -63,14 +68,15 @@ redis 127.0.0.1:6379> incrbyfloat age 3.5
 "95.5"
 ```
 8. 减法
-```bash
 decr key
+decrby key number
+```bash
 redis 127.0.0.1:6379> set age 20
 OK
 redis 127.0.0.1:6379> decr age
 (integer) 19
 
-decrby key number
+
 redis 127.0.0.1:6379> decrby age 3
 (integer) 16
 ```
