@@ -111,7 +111,7 @@ redis 127.0.0.1:6379> getbit char 7
 ```bash
 setbit  key offset value
 ```
-注意: 
+注意: <a href="https://redis.io/commands/setbit">https://redis.io/commands/setbit</a>
 - 如果offset过大,则会在中间填充0,
 - offset最大大到多少
 - offset最大2^32-1,可推出最大的的字符串为512M
