@@ -29,26 +29,29 @@ exp:
 ```bash
 getrange key start stop
 ```
-> exp:
-> redis 127.0.0.1:6379> set title 'chinese'
-> OK
-> redis 127.0.0.1:6379> getrange title 0 3
-> "chin"
-> redis 127.0.0.1:6379> getrange title 1 -2
-> "hines"
+exp:
+```bash
+  redis 127.0.0.1:6379> set title 'chinese'
+  OK
+  redis 127.0.0.1:6379> getrange title 0 3
+  "chin"
+  redis 127.0.0.1:6379> getrange title 1 -2
+  "hines"
+```
 
 6. 获取并返回旧值,设置新值
 ```bash
 getset key newvalue
 ```
-> exp:
-> 127.0.0.1:6379> set ztan ttt
-> OK
-> 127.0.0.1:6379> get ztan
-> "ttt"
-> 127.0.0.1:6379> getset ztan sss
-> "ttt"
-> 127.0.0.1:6379> get ztan
-> "sss"
-  
+exp:
+```bash
+  127.0.0.1:6379> set ztan ttt
+  OK
+  127.0.0.1:6379> get ztan
+  "ttt"
+  127.0.0.1:6379> getset ztan sss
+  "ttt"
+  127.0.0.1:6379> get ztan
+  "sss"
+``` 
 7. 
