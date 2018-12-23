@@ -1,11 +1,11 @@
 
 # Redis与 mysql事务的对比
 
-|操作   | Mysql	 | Redis
-|开启	 | start transaction | 	muitl
-|语句	 | 普通sql	 | 普通命令
-|失败   | 	rollback 回滚	 | discard 取消
-|成功	 | commit | 	exec
+| 操作   | Mysql	 | Redis
+| 开启	 | start transaction | 	muitl
+| 语句	 | 普通sql	 | 普通命令
+| 失败   | 	rollback 回滚	 | discard 取消
+| 成功	 | commit | 	exec
 
 > 注: rollback与discard 的区别
 如果已经成功执行了2条语句, 第3条语句出错.
@@ -25,8 +25,8 @@ Exec之后,会执行正确的语句,并跳过有不适当的语句.
 # Redis中的乐观锁
 思考: 
 > 我正在买票Ticket -1 , money -100
-> 而票只有1张, 如果在我multi之后,和exec之前, 票被别人买了---即ticket变成0了.
-> 我该如何观察这种情景,并不再提交。
+而票只有1张, 如果在我multi之后,和exec之前, 票被别人买了---即ticket变成0了.
+我该如何观察这种情景,并不再提交。
 
 【A】一个进程A操作：
 ```bash
