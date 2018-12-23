@@ -1,11 +1,12 @@
 
 # Redis与 mysql事务的对比
 
-| 操作   | Mysql	 | Redis
-| 开启	 | start transaction | 	muitl
-| 语句	 | 普通sql	 | 普通命令
-| 失败   | 	rollback 回滚	 | discard 取消
-| 成功	 | commit | 	exec
+| 操作   | Mysql	 | Redis |
+| :-------- | --------:| :--: |
+| 开启	 | start transaction | 	muitl |
+| 语句	 | 普通sql	 | 普通命令 |
+| 失败   | 	rollback 回滚	 | discard 取消 |
+| 成功	 | commit | 	exec |
 
 > 注: rollback与discard 的区别
 如果已经成功执行了2条语句, 第3条语句出错.
