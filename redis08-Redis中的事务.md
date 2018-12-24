@@ -217,3 +217,5 @@ class ClientThread implements Runnable {
 }
 
 ```
+### 关于多线程和线程池的介绍可查看 <a href='https://github.com/Miraclelucy/funny-netty/blob/master/thread06-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%89%96%E6%9E%90.md'>thread06-线程池剖析
+</a>
