@@ -105,7 +105,7 @@ import java.util.concurrent.Executors;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 
-/*** redis乐观锁实例* @author **/
+/*** redis乐观锁实例***/
 public class RedisLockTest {
     public static void main(String[] args) throws InterruptedException {
         long starTime = System.currentTimeMillis();
@@ -168,7 +168,7 @@ public class RedisLockTest {
     }
 }
 
-/*** 顾客线程** @author linbingwen**/
+/*** 顾客线程****/
 class ClientThread implements Runnable {
     Jedis jedis = null;
     String key = "prdNum";// 商品主键
