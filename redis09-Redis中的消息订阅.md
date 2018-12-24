@@ -1,10 +1,9 @@
 # 基本操作
-> 订阅端: subscribe 频道名称
-> 订阅端: psubscribe  [pattern] 模糊匹配订阅频道
-> 取消订阅: unsubscribe 频道名称
-> 取消订阅: punsubscribe [pattern] 模糊匹配取消订阅频道
-
-> 发布端: publish 频道名称 发布内容
+- 订阅端: subscribe 频道名称
+- 订阅端: psubscribe  [pattern] 模糊匹配订阅频道
+- 取消订阅: unsubscribe 频道名称
+- 取消订阅: punsubscribe [pattern] 模糊匹配取消订阅频道
+- 发布端: publish 频道名称 发布内容
 
 # 例子
 服务端:
