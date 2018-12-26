@@ -50,7 +50,6 @@ redis 127.0.0.1:6380> dbsize  # 当前数据库的key的数量
 
 #### info [Replication/CPU/Memory..] 查看redis服务器的信息
 
-info查看到的内容：
 ```bash
 1: 内存
 # Memory
