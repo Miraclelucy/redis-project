@@ -6,9 +6,9 @@
 4: 第4段,写要存储的列名
 
 用户表 user  , 转换为key-value存储
-| userid	| username	| passworde	| email | 
-| :-------- | --------:| :--: |
-| 9 | 	Lisi	| 1111111	| lisi@163.com | 
+| userid	| username	| passworde	| email        | 
+| :------ | --------: | --------: |:--:          |
+| 9       | 	Lisi	  | 1111111	  | lisi@163.com | 
 ```mysql
 set  user:userid:9:username lisi
 set  user:userid:9:password 111111
