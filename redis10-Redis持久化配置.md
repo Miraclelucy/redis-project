@@ -11,6 +11,7 @@ Redis中的持久化有2种方式
 
 > AOF(append only file)持久化：以独立日志的方式记录每次写命令，重启时再重新执行AOF文件中命令达到恢复数据的目的。AOF的主要作用是解决了数据持久化的实时性。
 
+
 # rdb配置方式
 ### 配置rdb
 Rdb快照的配置选项redis-3.2.8/redis.conf
