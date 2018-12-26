@@ -8,6 +8,7 @@
 用户表 user  , 转换为key-value存储
 
 | userid	| username	| passworde	| email        | 
+| ------ | ------ | ------ | ------ |
 | 9       | 	Lisi	  | 1111111	  | lisi@163.com | 
 
 ```mysql
