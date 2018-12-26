@@ -29,7 +29,7 @@ dir ./  # rdb的放置路径
 
 
 # aof配置方式
-开启AOF功能需要设置配置：appendonly yes,默认不开启
+开启AOF功能需要设置配置：appendonly yes，默认不开启
 ```bash
 aof 的配置 redis-3.2.8 /redis.conf
 appendonly  yes # 是否打开 aof日志功能
@@ -46,28 +46,34 @@ auto-aof-rewrite-min-size 64mb #aof文件,至少超过64M时,重写
 AOF和RDB文件都可以用于服务器重启时的数据恢复：
 - AOF持久化开启且存在AOF文件时，优先加载AOF文件
 - AOF关闭或者AOF文件不存在时，加载RDB文件
-- 开启AOF功能需要设置配置：appendonly yes,默认不开启
+- 开启AOF功能需要设置配置：appendonly yes，默认不开启
 
 
 # 注意事项
-> 问: 在dump rdb过程中,aof如果停止同步,会不会丢失?
+> 问: 在dump rdb过程中，aof如果停止同步，会不会丢失？
 
-答: 不会,所有的操作缓存在内存的队列里, dump完成后,统一操作.
+答: 不会，所有的操作缓存在内存的队列里，dump完成后，统一操作.
 
-> 问: aof重写是指什么?
+> 问: aof重写是指什么？
 
-答: aof重写是指把内存中的数据,逆化成命令,写入到.aof日志里.以解决 aof日志过大的问题.
+答: aof重写是指把内存中的数据，逆化成命令，写入到.aof日志里。以解决 aof日志过大的问题。
 
-> 问: 如果rdb文件,和aof文件都存在,优先用谁来恢复数据?
+> 问: 如果rdb文件，和aof文件都存在，优先用谁来恢复数据？
 
 答: aof
 
-> 问: 2种是否可以同时用?
+> 问: 2种是否可以同时用？
 
 答: 可以,而且推荐这么做
 
-> 问: 恢复时rdb和aof哪个恢复的快
+> 问: 恢复时rdb和aof哪个恢复的快？
 
-答: rdb快,因为其是数据的内存映射,直接载入到内存,而aof是命令,需要逐条执行
+答: rdb快,因为其是数据的内存映射，直接载入到内存,而aof是命令,需要逐条执行
+
+> 问: 如果不小心运行了flushall，该怎么恢复数据库
+
+答: 立即 shutdown nosave，关闭服务器。然后手工编辑aof文件，去掉文件中的 “flushall ”相关行，然后开启服务器,就可以导入回原来数据。
+如果flushall之后，系统其他人恰好执行了bgrewriteaof的命令，那么aof就清空了，数据丢失，所以不小心flushall后必须立即马上shutdown nosave
+
 
 
