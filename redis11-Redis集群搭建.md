@@ -39,7 +39,6 @@ redis 127.0.0.1:6379> get title
 如果slave断开了和master的连接，重启slave同步的过程都要重新执行一遍，所以记住多台slave不要同时全部启动，否则主服务器的IO剧增。
 总之，从服务器要一台一台的启动。
 
-
 # 如果master宕机，该怎么做
 运行时更改master-slave：
 修改一台slave(设为A)为new master 
