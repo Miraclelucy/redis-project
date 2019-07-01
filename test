@@ -1,0 +1,35 @@
+规则37. 禁止对表中的唯一值使用DISTINCT，或对已经GROUP BY的KEY做DISTINCT统计
+
+错误示例：
+
+SELECT COUNT(DISTINCT user_id)
+
+FROM
+
+(
+
+SELECT user_id
+
+,SUM(oper_times) AS oper_times
+
+FROM oper_log
+
+GROUP BY user_id
+
+) t1;
+
+机型需要归一化处理，涉及到按机型维度统计的数据需要使用机型UDF归一化。
+
+规则38. 禁止在Beeline命令中使用双引号字符串，需使用单引号，若有特殊情况需转译
+
+错误示例:
+
+beeline –e “
+
+SELECT
+
+“UNKOWN” AS column1
+
+FROM
+
+tableName1
